@@ -136,7 +136,7 @@ bool PoseEstimationNode::init() {
 
   // setup publish_world_nav_transform timer
   if (publish_world_nav_transform_) {
-    double period = .1;
+    double period = .01;
     getPrivateNodeHandle().getParam("publish_world_nav_transform_period", period);
     publish_world_nav_transform_period_ = ros::Duration(period);
     publish_world_nav_transform_timer_ = getNodeHandle().createTimer(publish_world_nav_transform_period_, &PoseEstimationNode::publishWorldNavTransform, this,
